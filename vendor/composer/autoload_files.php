@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '7ab19824d1234d8ecc168e831d3efaf5' => $vendorDir . '/illuminate/support/Illuminate/Support/helpers.php',
+    '9b24cdf6705c981dc519077514baadf4' => $vendorDir . '/danielstjules/stringy/src/Create.php',
+    'fe03086da41e24b75dac209691cb9360' => $vendorDir . '/illuminate/support/helpers.php',
 );

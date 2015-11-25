@@ -10,8 +10,5 @@ return array(
     'Slim' => array($vendorDir . '/slim/slim'),
     'SecurityLib' => array($vendorDir . '/ircmaxell/security-lib/lib'),
     'RandomLib' => array($vendorDir . '/ircmaxell/random-lib/lib'),
-    'Illuminate\\Support' => array($vendorDir . '/illuminate/support'),
-    'Illuminate\\Events' => array($vendorDir . '/illuminate/events'),
-    'Illuminate\\Database' => array($vendorDir . '/illuminate/database'),
-    'Illuminate\\Container' => array($vendorDir . '/illuminate/container'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
 );

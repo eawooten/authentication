@@ -13,6 +13,11 @@ class BetweenRule implements RuleContract
 
     public function error()
     {
-        return '{field} must be between {arg} and {arg:1}.';
+        return '{field} must be between {$0} and {$1}.';
+    }
+
+    public function canSkip()
+    {
+        return true;
     }
 }

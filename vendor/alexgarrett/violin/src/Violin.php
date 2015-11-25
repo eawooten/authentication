@@ -64,23 +64,29 @@ class Violin implements ValidatorContract
     /**
      * Kick off the validation using input and rules.
      *
-     * @param  array  $data
+     * @param  array  $input
+     * @param  array  $rules
      *
-     * @return void
+     * @return this
      */
-    public function validate(array $data)
+    public function validate(array $data, $rules = [])
     {
         $this->clearErrors();
         $this->clearFieldAliases();
 
         $data = $this->extractFieldAliases($data);
 
-        $input = $this->extractInput($data);
-        $rules = $this->extractRules($data);
+        // If the rules array is empty, then it means we are
+        // receiving the rules directly with the input, so we need
+        // to extract the information.
+        if (empty($rules)) {
+            $rules = $this->extractRules($data);
+            $data  = $this->extractInput($data);
+        }
 
-        $this->input = $input;
+        $this->input = $data;
 
-        foreach ($input as $field => $value) {
+        foreach ($data as $field => $value) {
             $fieldRules = explode('|', $rules[$field]);
 
             foreach ($fieldRules as $rule) {
@@ -92,6 +98,8 @@ class Violin implements ValidatorContract
                 );
             }
         }
+
+        return $this;
     }
 
     /**
@@ -111,7 +119,7 @@ class Violin implements ValidatorContract
      */
     public function fails()
     {
-        return !empty($this->errors);
+        return ! $this->passes();
     }
 
     /**
@@ -232,8 +240,16 @@ class Violin implements ValidatorContract
             $args = $item['args'];
 
             $argReplace = array_map(function($i) {
-                return "{arg{$i}}";
+                return "{\${$i}}";
             }, array_keys($args));
+
+            // Number of arguments
+            $args[] = count($item['args']);
+            $argReplace[] = '{$#}';
+
+            // All arguments
+            $args[] = implode(', ', $item['args']);
+            $argReplace[] = '{$*}';
 
             // Replace arguments
             $message = str_replace($argReplace, $args, $message);
@@ -264,6 +280,10 @@ class Violin implements ValidatorContract
     {
         $ruleToCall = $this->getRuleToCall($rule);
 
+        if ($this->canSkipRule($ruleToCall, $value)) {
+            return;
+        }
+        
         $passed = call_user_func_array($ruleToCall, [
             $value,
             $this->input,
@@ -273,6 +293,28 @@ class Violin implements ValidatorContract
         if (!$passed) {
             $this->handleError($field, $value, $rule, $args);
         }
+    }
+
+    /**
+     * Method to help skip a rule if a value is empty, since we
+     * don't need to validate an empty value. If the rule to
+     * call specifically doesn't allowing skipping, then
+     * we don't want skip the rule.
+     *
+     * @param  array $ruleToCall
+     * @param  mixed $value
+     *
+     * @return null
+     */
+    protected function canSkipRule($ruleToCall, $value)
+    {
+        return (
+            (is_array($ruleToCall) &&
+            method_exists($ruleToCall[0], 'canSkip') &&
+            $ruleToCall[0]->canSkip()) &&
+            empty($value) &&
+            !is_array($value)
+        );
     }
 
     /**
@@ -447,6 +489,7 @@ class Violin implements ValidatorContract
 
     /**
      * Extract the field ruleset from the data array.
+     *
      * @param  array  $data
      * @return array
      */

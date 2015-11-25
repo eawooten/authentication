@@ -13,6 +13,11 @@ class MatchesRule implements RuleContract
 
     public function error()
     {
-        return '{field} must match {arg}.';
+        return '{field} must match {$0}.';
+    }
+
+    public function canSkip()
+    {
+        return true;
     }
 }
