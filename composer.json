@@ -1,4 +1,9 @@
-{
+{   
+    "autoload": {
+        "psr-4": {
+            "eawooten\\": "app/eawooten"
+        }   
+    },
     "require": {
         "slim/slim": "~2.0",
         "slim/views": "0.1.*",

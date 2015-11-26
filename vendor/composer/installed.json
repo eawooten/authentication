@@ -166,69 +166,6 @@
         ]
     },
     {
-        "name": "phpmailer/phpmailer",
-        "version": "v5.2.14",
-        "version_normalized": "5.2.14.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PHPMailer/PHPMailer.git",
-            "reference": "e774bc9152de85547336e22b8926189e582ece95"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e774bc9152de85547336e22b8926189e582ece95",
-            "reference": "e774bc9152de85547336e22b8926189e582ece95",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "require-dev": {
-            "phpdocumentor/phpdocumentor": "*",
-            "phpunit/phpunit": "4.7.*"
-        },
-        "suggest": {
-            "league/oauth2-client": "Needed for XOAUTH2 authentication",
-            "league/oauth2-google": "Needed for Gmail XOAUTH2"
-        },
-        "time": "2015-11-01 10:15:28",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "class.phpmailer.php",
-                "class.phpmaileroauth.php",
-                "class.phpmaileroauthgoogle.php",
-                "class.smtp.php",
-                "class.pop3.php",
-                "extras/EasyPeasyICS.php",
-                "extras/ntlm_sasl_client.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-2.1"
-        ],
-        "authors": [
-            {
-                "name": "Jim Jagielski",
-                "email": "jimjag@gmail.com"
-            },
-            {
-                "name": "Marcus Bointon",
-                "email": "phpmailer@synchromedia.co.uk"
-            },
-            {
-                "name": "Andy Prevost",
-                "email": "codeworxtech@users.sourceforge.net"
-            },
-            {
-                "name": "Brent R. Matzelle"
-            }
-        ],
-        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
-    },
-    {
         "name": "hassankhan/config",
         "version": "0.8.2",
         "version_normalized": "0.8.2.0",
@@ -286,71 +223,6 @@
             "yaml",
             "yml"
         ]
-    },
-    {
-        "name": "symfony/translation",
-        "version": "v2.7.7",
-        "version_normalized": "2.7.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/translation.git",
-            "reference": "e4ecb9c3ba1304eaf24de15c2d7a428101c1982f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/e4ecb9c3ba1304eaf24de15c2d7a428101c1982f",
-            "reference": "e4ecb9c3ba1304eaf24de15c2d7a428101c1982f",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "conflict": {
-            "symfony/config": "<2.7"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~2.7",
-            "symfony/intl": "~2.4",
-            "symfony/yaml": "~2.2"
-        },
-        "suggest": {
-            "psr/log": "To use logging capability in translator",
-            "symfony/config": "",
-            "symfony/yaml": ""
-        },
-        "time": "2015-11-18 13:41:01",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.7-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Translation\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Translation Component",
-        "homepage": "https://symfony.com"
     },
     {
         "name": "nesbot/carbon",
@@ -501,6 +373,118 @@
         ]
     },
     {
+        "name": "alexgarrett/violin",
+        "version": "2.2.2",
+        "version_normalized": "2.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/alexgarrett/violin.git",
+            "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/alexgarrett/violin/zipball/92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
+            "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.5",
+            "squizlabs/php_codesniffer": "2.1.*"
+        },
+        "time": "2015-04-11 22:58:34",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Violin\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alex Garrett",
+                "email": "alex@codecourse.com",
+                "homepage": "http://itsmealex.com"
+            }
+        ],
+        "description": "Violin is an easy to use, highly customisable PHP validator.",
+        "homepage": "https://github.com/alexgarrett/violin",
+        "keywords": [
+            "validation"
+        ]
+    },
+    {
+        "name": "symfony/translation",
+        "version": "v2.7.7",
+        "version_normalized": "2.7.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "e4ecb9c3ba1304eaf24de15c2d7a428101c1982f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/e4ecb9c3ba1304eaf24de15c2d7a428101c1982f",
+            "reference": "e4ecb9c3ba1304eaf24de15c2d7a428101c1982f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "conflict": {
+            "symfony/config": "<2.7"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.7",
+            "symfony/intl": "~2.4",
+            "symfony/yaml": "~2.2"
+        },
+        "suggest": {
+            "psr/log": "To use logging capability in translator",
+            "symfony/config": "",
+            "symfony/yaml": ""
+        },
+        "time": "2015-11-18 13:41:01",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Translation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Translation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
         "name": "danielstjules/stringy",
         "version": "1.10.0",
         "version_normalized": "1.10.0.0",
@@ -629,27 +613,27 @@
     },
     {
         "name": "illuminate/contracts",
-        "version": "v5.1.22",
-        "version_normalized": "5.1.22.0",
+        "version": "v5.0.33",
+        "version_normalized": "5.0.33.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/contracts.git",
-            "reference": "e2b71fdbeeb3438748dca5f497e205888788a883"
+            "reference": "b8b11d78724a6f8a62be3b1dfa20fa372f861398"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/contracts/zipball/e2b71fdbeeb3438748dca5f497e205888788a883",
-            "reference": "e2b71fdbeeb3438748dca5f497e205888788a883",
+            "url": "https://api.github.com/repos/illuminate/contracts/zipball/b8b11d78724a6f8a62be3b1dfa20fa372f861398",
+            "reference": "b8b11d78724a6f8a62be3b1dfa20fa372f861398",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5.9"
+            "php": ">=5.4.0"
         },
-        "time": "2015-09-24 11:16:48",
+        "time": "2015-05-15 07:22:28",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.1-dev"
+                "dev-master": "5.0-dev"
             }
         },
         "installation-source": "dist",
@@ -673,36 +657,35 @@
     },
     {
         "name": "illuminate/support",
-        "version": "v5.1.22",
-        "version_normalized": "5.1.22.0",
+        "version": "v5.0.33",
+        "version_normalized": "5.0.33.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
-            "reference": "d52a832d3f4b025b82f954cbdef8ee24f6a77e77"
+            "reference": "32a12f97029b624fc0f9454e7ca69eaafef49c5d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/support/zipball/d52a832d3f4b025b82f954cbdef8ee24f6a77e77",
-            "reference": "d52a832d3f4b025b82f954cbdef8ee24f6a77e77",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/32a12f97029b624fc0f9454e7ca69eaafef49c5d",
+            "reference": "32a12f97029b624fc0f9454e7ca69eaafef49c5d",
             "shasum": ""
         },
         "require": {
             "danielstjules/stringy": "~1.8",
             "doctrine/inflector": "~1.0",
             "ext-mbstring": "*",
-            "illuminate/contracts": "5.1.*",
-            "php": ">=5.5.9"
+            "illuminate/contracts": "5.0.*",
+            "php": ">=5.4.0"
         },
         "suggest": {
             "jeremeamia/superclosure": "Required to be able to serialize closures (~2.0).",
-            "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (^1.0.6).",
-            "symfony/var-dumper": "Required to use the dd function (2.7.*)."
+            "symfony/var-dumper": "Required to use the dd function (2.6.*)."
         },
-        "time": "2015-10-19 06:01:02",
+        "time": "2015-06-04 12:15:51",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.1-dev"
+                "dev-master": "5.0-dev"
             }
         },
         "installation-source": "dist",
@@ -729,28 +712,28 @@
     },
     {
         "name": "illuminate/container",
-        "version": "v5.1.22",
-        "version_normalized": "5.1.22.0",
+        "version": "v5.0.33",
+        "version_normalized": "5.0.33.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/container.git",
-            "reference": "bb2cd1d9c6cb7c4ce80b8d89f899e086f5a4f65b"
+            "reference": "aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/container/zipball/bb2cd1d9c6cb7c4ce80b8d89f899e086f5a4f65b",
-            "reference": "bb2cd1d9c6cb7c4ce80b8d89f899e086f5a4f65b",
+            "url": "https://api.github.com/repos/illuminate/container/zipball/aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6",
+            "reference": "aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6",
             "shasum": ""
         },
         "require": {
-            "illuminate/contracts": "5.1.*",
-            "php": ">=5.5.9"
+            "illuminate/contracts": "5.0.*",
+            "php": ">=5.4.0"
         },
-        "time": "2015-10-19 06:01:02",
+        "time": "2015-05-29 20:16:27",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.1-dev"
+                "dev-master": "5.0-dev"
             }
         },
         "installation-source": "dist",
@@ -774,38 +757,37 @@
     },
     {
         "name": "illuminate/database",
-        "version": "v5.1.22",
-        "version_normalized": "5.1.22.0",
+        "version": "v5.0.33",
+        "version_normalized": "5.0.33.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/database.git",
-            "reference": "f82f4009e5776a8b0a580fca881694a778b229e6"
+            "reference": "6d79bb678a91123a15418863af901d2145b50349"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/database/zipball/f82f4009e5776a8b0a580fca881694a778b229e6",
-            "reference": "f82f4009e5776a8b0a580fca881694a778b229e6",
+            "url": "https://api.github.com/repos/illuminate/database/zipball/6d79bb678a91123a15418863af901d2145b50349",
+            "reference": "6d79bb678a91123a15418863af901d2145b50349",
             "shasum": ""
         },
         "require": {
-            "illuminate/container": "5.1.*",
-            "illuminate/contracts": "5.1.*",
-            "illuminate/support": "5.1.*",
-            "nesbot/carbon": "~1.19",
-            "php": ">=5.5.9"
+            "illuminate/container": "5.0.*",
+            "illuminate/contracts": "5.0.*",
+            "illuminate/support": "5.0.*",
+            "nesbot/carbon": "~1.0",
+            "php": ">=5.4.0"
         },
         "suggest": {
             "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
-            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "illuminate/console": "Required to use the database commands (5.1.*).",
-            "illuminate/events": "Required to use the observers with Eloquent (5.1.*).",
-            "illuminate/filesystem": "Required to use the migrations (5.1.*)."
+            "illuminate/console": "Required to use the database commands (5.0.*).",
+            "illuminate/events": "Required to use the observers with Eloquent (5.0.*).",
+            "illuminate/filesystem": "Required to use the migrations (5.0.*)."
         },
-        "time": "2015-10-28 21:57:04",
+        "time": "2015-06-02 13:39:10",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.1-dev"
+                "dev-master": "5.0-dev"
             }
         },
         "installation-source": "dist",
@@ -834,50 +816,66 @@
         ]
     },
     {
-        "name": "alexgarrett/violin",
-        "version": "2.2.2",
-        "version_normalized": "2.2.2.0",
+        "name": "phpmailer/phpmailer",
+        "version": "v5.2.14",
+        "version_normalized": "5.2.14.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/alexgarrett/violin.git",
-            "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc"
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "e774bc9152de85547336e22b8926189e582ece95"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/alexgarrett/violin/zipball/92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
-            "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e774bc9152de85547336e22b8926189e582ece95",
+            "reference": "e774bc9152de85547336e22b8926189e582ece95",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.4"
+            "php": ">=5.0.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "~4.5",
-            "squizlabs/php_codesniffer": "2.1.*"
+            "phpdocumentor/phpdocumentor": "*",
+            "phpunit/phpunit": "4.7.*"
         },
-        "time": "2015-04-11 22:58:34",
+        "suggest": {
+            "league/oauth2-client": "Needed for XOAUTH2 authentication",
+            "league/oauth2-google": "Needed for Gmail XOAUTH2"
+        },
+        "time": "2015-11-01 10:15:28",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "psr-4": {
-                "Violin\\": "src/"
-            }
+            "classmap": [
+                "class.phpmailer.php",
+                "class.phpmaileroauth.php",
+                "class.phpmaileroauthgoogle.php",
+                "class.smtp.php",
+                "class.pop3.php",
+                "extras/EasyPeasyICS.php",
+                "extras/ntlm_sasl_client.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "MIT"
+            "LGPL-2.1"
         ],
         "authors": [
             {
-                "name": "Alex Garrett",
-                "email": "alex@codecourse.com",
-                "homepage": "http://itsmealex.com"
+                "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+            },
+            {
+                "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+            },
+            {
+                "name": "Brent R. Matzelle"
             }
         ],
-        "description": "Violin is an easy to use, highly customisable PHP validator.",
-        "homepage": "https://github.com/alexgarrett/violin",
-        "keywords": [
-            "validation"
-        ]
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
     }
 ]

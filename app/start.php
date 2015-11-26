@@ -1,7 +1,13 @@
 <?php
 
 use Slim\Slim;
+use Slim\Views\Twig;
+use Slim\Views\TwigExtension;
+
 use Noodlehaus\Config;
+
+use eawooten\User\User;
+use eawooten\Helpers\Hash;
 
 session_cache_limiter(false);
 session_start();
@@ -13,11 +19,32 @@ define('INC_ROOT', dirname(__DIR__));
 require INC_ROOT . '/vendor/autoload.php';
 
 $app = new Slim([
-  'mode' => file_get_contents(INC_ROOT . '/mode.php')
+  'mode' => file_get_contents(INC_ROOT . '/mode.php'),
+  'view' => new Twig(),
+  'templates.path' => INC_ROOT . '/app/views'
 ]);
 
 $app->configureMode($app->config('mode'), function() use ($app) {
   $app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
 });
 
-echo $app->config->get('db.driver');
+require 'database.php';
+require 'routes.php';
+
+$app->container->set('user', function() {
+	return new User;
+});
+
+$app->container->singleton('hash', function() use ($app) {
+	return new Hash($app->config);
+});
+
+$view = $app->view();
+
+$view->parserOptions = [
+	'debug' => $app->config->get('twit.debug')
+];
+
+$view->parserExtensions = [
+	new TwigExtension
+];
