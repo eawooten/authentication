@@ -4,6 +4,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
+// Setting up eloquent from Laravel
 $capsule->addConnection([
 	'driver' => $app->config->get('db.driver'),
 	'host' => $app->config->get('db.host'),
@@ -15,4 +16,5 @@ $capsule->addConnection([
 	'prefix' => $app->config->get('db.prefix'),
 ]);
 
+// Starting Eloquent to use in models
 $capsule->bootEloquent();

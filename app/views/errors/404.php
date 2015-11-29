@@ -1,9 +1,9 @@
-{# //extending default view with hompage content #}
+{# //extending default view with 404 page content #}
 {% extends 'templates/default.php' %}
 
 {# //defining content to replace block in default template #}
-{% block title %}Home{% endblock %}
+{% block title %}404{% endblock %}
 
 {% block content %}
-	Home
+	That page cannot be found.
 {% endblock %}
